@@ -1,0 +1,30 @@
+# Rust
+/target
+**/*.rs.bk
+*.bk
+
+# Nix / Direnv
+.direnv/
+.envrc.local*
+
+# IDE & Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Large Data & Archives
+data/**/*.zip
+data/**/*.bin
+data/**/*.tar.gz
+data/**/*.7z
+
+# Python (if any bindings/scripts are used)
+__pycache__/
+*.py[cod]
+.venv/
