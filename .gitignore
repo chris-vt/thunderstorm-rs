@@ -5,6 +5,7 @@
 
 # Nix / Direnv
 .direnv/
+.envrc
 .envrc.local*
 
 # IDE & Editors
@@ -18,11 +19,10 @@
 .DS_Store
 Thumbs.db
 
-# Large Data & Archives
-data/**/*.zip
-data/**/*.bin
-data/**/*.tar.gz
-data/**/*.7z
+# Large Data, Archives, and Local Documentation
+data/
+docs/
+*.bin
 
 # Python (if any bindings/scripts are used)
 __pycache__/

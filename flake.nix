@@ -1,5 +1,5 @@
 {
-  description = "SNOMED Research: In-Memory Graph and Lookup Crates";
+  description = "Thunderstorm: High-performance SNOMED CT UK Clinical Ontology Engine";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -20,6 +20,16 @@
         };
       in
       {
+        packages.default = pkgs.rustPlatform.buildRustPackage {
+          pname = "thunderstorm";
+          version = "0.1.0";
+          src = ./.;
+          cargoLock = {
+            lockFile = ./Cargo.lock;
+          };
+          nativeBuildInputs = [ pkgs.pkg-config ];
+        };
+
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
             rustToolchain
@@ -27,7 +37,7 @@
           ];
 
           shellHook = ''
-            echo "🦀 SNOMED Research Rust Environment Loaded"
+            echo "⚡ Thunderstorm SNOMED CT Engine Loaded"
             echo "Rust:  $(rustc --version)"
             echo "Cargo: $(cargo --version)"
           '';
